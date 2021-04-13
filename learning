@@ -1,0 +1,26 @@
+React uses the declarative approach
+we tell react our target state ans as the user progresses the app, react decids how it will use the components to reach the target state
+whereas in vanilla js we have to take care of every event and create dom instructions
+
+jsx is javascript xml
+// normally css files are not included in js files but react is built in a way that it combines the worlds
+
+multiple root elemets that mutiple divs are not allowed in react, although we can nest as many divs as we can inside it. But there can be only one root div per component
+
+if there is a change in value of normal variable on triggering of a click litener, react does not re render that component. it only does that in case of state changing
+
+useState can only be called inside the component function
+it wants a default state value
+it returns an array
+where array contains a refrence to the spcial variable passed as params before and a function to change that vars value
+const [specialValue, valueChaningFunction] = useState(props.specialValue)
+valueChangingFunction(newValue) // the method of changing value with function is what re-renders the dom
+
+every event change in javascript gets a event onject that describes that event
+
+better way of updating state when it depends on previous state
+    const titleChangeHandler = (event) => {
+        setUserInput((prevState) => {
+            return {...prevState, enteredTitle: event.target.value}
+        })
+the above is a better approach as it now has the lastest snapshot of previous state, and this is good when state is constantly changing at high rate
